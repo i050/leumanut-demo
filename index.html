@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="לאומנות — אקטואליה, גאופוליטיקה והיסטוריה. מגלים את התוכן לפי מקום, נושא וסדרה.">
+  <title>לאומנות — לראות את התמונה הרחבה</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800;900&family=Secular+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="data.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">דילוג לתוכן</a>
+  <header class="site-header">
+    <a class="brand" href="#/" aria-label="לאומנות — דף הבית"><span><strong>לאומנות<span class="wordmark-dot">.</span></strong><small>העולם. הכוחות. ההקשר. / עם רמי רחמיאל</small></span></a>
+    <button class="menu-toggle" aria-label="פתיחת תפריט" aria-expanded="false" aria-controls="main-nav">☰</button>
+    <nav id="main-nav" class="main-nav" aria-label="ניווט ראשי">
+      <a href="#/current" data-nav="current">אקטואליה</a>
+      <a href="#/explore" data-nav="explore">לפי אזור</a>
+      <a href="#/series" data-nav="series">סדרות ועומק</a>
+      <a href="#/books" data-nav="books">הספרים</a>
+    </nav>
+    <div class="header-actions"><a class="search-toggle" href="#/search" aria-label="חיפוש באתר"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg></a><a class="cart-toggle" href="#/cart" aria-label="סל הספרים"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h14l1 14H4L5 7Z"/><path d="M8 8V6a4 4 0 0 1 8 0v2"/></svg><span id="cart-count">0</span></a></div>
+  </header>
+  <main id="main" tabindex="-1"></main>
+  <footer class="site-footer"><div class="footer-top"><a class="brand" href="#/"><span><strong>לאומנות<span class="wordmark-dot">.</span></strong><small>להבין את העולם. לראות את ההקשר.</small></span></a><a href="https://www.youtube.com/@leumanut" target="_blank" rel="noopener noreferrer">לערוץ היוטיוב המקורי ↗</a></div></footer>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
