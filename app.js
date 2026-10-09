@@ -15,7 +15,7 @@
   const thumb = (v, cls='', eager=false) => `<img class="${cls}" src="https://i.ytimg.com/vi/${v.id}/hqdefault.jpg" alt="" loading="${eager?'eager':'lazy'}" decoding="async">`;
   const play = '<span class="play" aria-hidden="true">▶</span>';
   const card = (v, small=false) => `<article class="video-card ${small?'compact':''}"><a class="thumbnail" href="#/watch/${v.id}" tabindex="-1" aria-hidden="true">${thumb(v)}${play}<span class="thumb-label">${esc(v.type)}</span></a><div class="video-copy"><div class="card-kicker">${esc(v.topic)}</div><h3><a href="#/watch/${v.id}">${esc(v.title)}</a></h3><div class="tags">${tags(v)}</div></div></article>`;
-  const sectionHead = (label,title,link='',href='') => `<div class="section-heading"><div><div class="eyebrow">${label}</div><h2>${title}</h2></div>${link?`<a class="text-link" href="${href}">${link} ${iconArrow}</a>`:''}</div>`;
+  const sectionHead = (label,title,link='',href='') => `<div class="section-heading"><div>${label?`<div class="eyebrow">${label}</div>`:'}<h2>${title}</h2></div>${link?`<a class="text-link" href="${href}">${link} ${iconArrow}</a>`:''}</div>`;
   const pageHead = (eyebrow,title,description) => `<section class="page-heading wrap"><div class="eyebrow">${eyebrow}</div><h1>${title}</h1><p>${description}</p></section>`;
   const note = '';
   const regionLinks = (active='') => `<div class="region-links">${regions.map((r,i)=>`<a href="#/region/${r.id}" class="region-link ${active===r.id?'selected':''}"><span class="index">0${i+1}</span><span>${r.name}</span><span class="region-count">${videos.filter(v=>v.regions.includes(r.id)).length} תכנים</span>${iconArrow}</a>`).join('')}</div>`;
@@ -55,7 +55,7 @@
     <section class="about-strip wrap"><img src="assets/author.png" alt="רמי רחמיאל" loading="lazy"><div><div class="eyebrow">מאחורי לאומנות</div><h2>רמי רחמיאל</h2><p>הסרטונים, הניתוחים והספרים של יוצר ערוץ לאומנות — במרחב אחד שמזמין להמשיך ללמוד.</p></div><a class="text-link" href="https://www.youtube.com/@leumanut" target="_blank" rel="noopener noreferrer">להכיר את הערוץ ↗</a></section>`;
   }
   function explore() {
-    return `${pageHead('אטלס התוכן','איפה בעולם מעניין אתכם?','בחרו אזור במפה או ברשימה. מכאן תוכלו להגיע לעדכונים, להסברים ולתכני הרקע שלו.')}<section class="wrap explore-layout">${atlas()}<aside class="region-panel"><div class="eyebrow">בוחרים מקום</div><h2>האזורים</h2>${regionLinks()}</aside></section><section class="wrap section">${sectionHead('עוד דרך לגלות','מהארכיון, מסביב לעולם')}<div class="video-grid">${[videos[10],videos[11],videos[4]].map(v=>card(v)).join('')}</div></section>`;
+    return `${pageHead('אטלס התוכן','איפה בעולם מעניין אתכם?','בחרו אזור במפה או ברשימה. מכאן תוכלו להגיע לעדכונים, להסברים ולתכני הרקע שלו.')}<section class="wrap explore-layout">${atlas()}<aside class="region-panel"><h2>האזורים</h2>${regionLinks()}</aside></section><section class="wrap section">${sectionHead('','מהארכיון, מסביב לעולם')}<div class="video-grid">${[videos[10],videos[11],videos[4]].map(v=>card(v)).join('')}</div></section>`;
   }
   function regionPage(id) {
     const r=regions.find(r=>r.id===id); if(!r) return notFound();
